@@ -1,0 +1,83 @@
+/* Hero section with gradient background and scaling effect */
+.center {
+  background: linear-gradient(135deg, rgb(255, 0, 85), rgb(255, 127, 171));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  border-radius: 1rem;
+  color: white;
+  font-size: 3rem;
+  width: 80%;
+  height: 45rem;
+  margin-left: 10%;
+  padding: 2rem;
+  animation: scaleUp 1s ease-out forwards; /* Scaling effect */
+  overflow: hidden; /* Ensure content stays within */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.95);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* Text animation for intro text */
+.intro {
+  display: contents;
+  justify-content: end;
+  margin-top: 2rem;
+  font-size: 6.5rem;
+  font-weight: 800;
+  text-align: left;
+  margin-left: 0;
+  padding: 0;
+  opacity: 0; /* Hide initially */
+  animation: fadeInText 1s ease-out forwards 0.5s; /* Animate with delay */
+}
+
+@keyframes fadeInText {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Pad image sliding effect */
+.pad-image {
+  width: fit-content;
+  height: 40rem;
+  margin: 2rem;
+  margin-left: 6rem;
+  animation: slideIn 1s ease-out forwards; /* Sliding in effect */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.pad-image:hover {
+  transform: scale(1.05) rotate(5deg); /* Slight zoom and rotation on hover */
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-50%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Add subtle hover effect for interactivity */
+.center:hover {
+  transform: scale(1.02); /* Slight scaling on hover */
+  transition: transform 0.5s ease-in-out;
+}
